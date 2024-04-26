@@ -1,23 +1,15 @@
-let users = [];
+let username = "kenny";
+let review = "whaaat";
+let bookreviews = {}
 
-users.push({"username":"user","password":"pass"});
-users.push({"username":"user1","password":"pass2"})
+bookreviews[username] = review;
+bookreviews['katie'] = "I love it"
 
-let username = "user"
+console.log(bookreviews);
 
-const checkifexists = (username) => {
-    let existinguser = users.filter((user) => user.username === username)
-    if (existinguser.length > 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
+if (bookreviews["kenny"]) {
+    delete bookreviews["kenny"];
 }
 
-if (checkifexists(username)) {
-    console.log("true")
-}
-else {
-    console.log("false")
-}
+
+console.log(bookreviews);
