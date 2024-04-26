@@ -1,24 +1,23 @@
-let books = {
-    1: {"author": "Chinua Achebe","title": "Things Fall Apart", "reviews": {} },
-    2: {"author": "Hans Christian Andersen","title": "Fairy tales", "reviews": {} },
-    3: {"author": "Dante Alighieri","title": "The Divine Comedy", "reviews": {} },
-    4: {"author": "Unknown","title": "The Epic Of Gilgamesh", "reviews": {} },
-    5: {"author": "Unknown","title": "The Book Of Job", "reviews": {} },
-    6: {"author": "Unknown","title": "One Thousand and One Nights", "reviews": {} },
-    7: {"author": "Unknown","title": "Nj\u00e1l's Saga", "reviews": {} },
-    8: {"author": "Jane Austen","title": "Pride and Prejudice", "reviews": {} },
-    9: {"author": "Honor de Balzac","title": "Le P\u00e8re Goriot", "reviews": {} },
-    10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} }
-}
-let author = "Honor\u00e9 de Balzac"
-let authorsbooks = {...books};
-let number = Object.keys(books).length;
+let users = [];
 
-for (let i = 1; i <= number; i++) {
-    if (books[i]["author"] != author) { 
-        delete authorsbooks[i]
+users.push({"username":"user","password":"pass"});
+users.push({"username":"user1","password":"pass2"})
+
+let username = "user"
+
+const checkifexists = (username) => {
+    let existinguser = users.filter((user) => user.username === username)
+    if (existinguser.length > 0) {
+        return true;
+    }
+    else {
+        return false;
     }
 }
 
-console.log(authorsbooks);
-console.log(books);
+if (checkifexists(username)) {
+    console.log("true")
+}
+else {
+    console.log("false")
+}
